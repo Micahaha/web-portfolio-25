@@ -1,15 +1,14 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
-import { Suspense } from "react"
-import "./globals.css"
+// app/layout.tsx (or pages/_document.tsx if using pages router)
+import { Metadata } from 'next'
+import { headers } from 'next/headers'
+import './globals.css'
+import { usePathname } from 'next/navigation' // not required, just example
 
 export const metadata: Metadata = {
-  title: "Cyber Security Portfolio | John Doe",
-  description: "Portfolio of a Cyber Security and Computer Science Student",
-  generator: "v0.app",
+  title: 'My Portfolio',
+  icons: [{ rel: 'icon', url: '/favicon.ico' }], // Next rewrites this w/ basePath automatically
 }
+
 
 export default function RootLayout({
   children,
